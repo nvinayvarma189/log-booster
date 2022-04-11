@@ -1,5 +1,5 @@
 {
-  "name": "log-booster",
+	"name": "log-booster",
 	"displayName": "log-booster",
 	"description": "An VS code extension to add frequently used log statements",
 	"version": "0.0.1",
@@ -10,14 +10,22 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:log-booster.insertStatements"
+		"onCommand:log-booster.insertStatements"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
 		"commands": [
 			{
 				"command": "log-booster.insertStatements",
-				"title": "Hello World"
+				"title": "Log Booster"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "log-booster.insertStatements",
+				"key": "ctrl+alt+l",
+				"mac": "cmd+alt+l",
+				"when": "editorTextFocus"
 			}
 		]
 	},

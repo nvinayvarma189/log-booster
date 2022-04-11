@@ -1,4 +1,5 @@
 import * as vscode from 'vscode';
+import * as consts from './consts';
 
 export function activate(context: vscode.ExtensionContext) {
 	
@@ -28,37 +29,27 @@ export function activate(context: vscode.ExtensionContext) {
 
 		await vscode.commands.executeCommand('editor.action.insertLineAfter');
 		let curPos = editor.selection.active;
-		let firstCharIndex = editor.document.lineAt(curPos.line).firstNonWhitespaceCharacterIndex;
-		console.log(firstCharIndex);
-		
-		const indent = await getIndentation(firstCharIndex);
+		const indent = editor.document.lineAt(curPos.line).text; // number of spaces at the beginning of the line
 		const logStatementText = await getLogStatement(selectedText);
-		const indentedText = logStatementText + "\n" + indent;
+		const typeLogStatementText = await getLogStatement(selectedText, "type");
 
+		let arr = [consts.DIVIDER_LOG_STATEMENT, logStatementText, typeLogStatementText, consts.DIVIDER_LOG_STATEMENT];
 		editor.edit(editBuilder => {
 			editBuilder.insert(curPos, '\n' + indent);
-			editBuilder.insert(curPos, indentedText);
-			editBuilder.insert(curPos, indentedText);
-			editBuilder.insert(curPos, indentedText);
-			editBuilder.insert(curPos, indentedText);
-			editBuilder.insert(curPos, indentedText);
+			for (let i = 0; i < arr.length; i++) {
+				editBuilder.insert(curPos, arr[i] + '\n' + indent);
+			}
 		});
-
 	});
 
 	context.subscriptions.push(disposable);
 }
 
-async function getIndentation(firstCharIndex: number){
-	let indent = "";
-	for (let i = 0; i < firstCharIndex; i++) {
-		indent += "\t";
+async function getLogStatement(selectedText: string, logEntity = "", logStatement = consts.LOG_STATEMENT) {
+	if (!logEntity){
+		return `${logStatement}(${selectedText})`;
 	}
-	return indent;
-}
-
-async function getLogStatement(selectedText: string, logStatement = "print") {
-	return `${logStatement}(${selectedText})`;
+	return `${logStatement}(${logEntity}(${selectedText}))`;
 }
 
 // this method is called when your extension is deactivated
