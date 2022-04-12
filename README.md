@@ -1,70 +1,63 @@
 # log-booster README
 
-This is the README for your extension "log-booster". After writing up a brief description, we recommend including the following sections.
+log-booster is a simple VS code extension that helps you quickly add log statements to your code.
 
+Made by someone who uses `print()` as a debugger. Made for those who use `print()` as a debugger.
+
+## Installation
+
+
+## How to use
+
+Select the variable/expression you want to log and click `ctrl+alt+l` if you are on Windows/linux or `cmd+alt+l` if you are on MacOS.
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+1. Informs the user if they invoke the extension
+    1. without a focused editor
+    2. on a non python file
+    3. without any selected text
+2. Log statements follow the same indentation as the line of the selected text
+3. A shortcut key is provided to invoke the extension
 
-For example if there is an image subfolder under your extension project workspace:
 
-\!\[feature X\]\(images/feature-x.png\)
+## Limitations
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+1. Only works for Python files
+2. Logging multi-cursor selections won't work. Only the first selection will be logged.
 
-## Requirements
+## Contributions
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+The extension was setup using [yo](https://www.npmjs.com/package/yo) and [generator-code](https://www.npmjs.com/package/generator-code) by following [this guide](https://code.visualstudio.com/api/get-started/your-first-extension)
 
-## Extension Settings
+I used the following resources to help me develop this extension:
+```
+nvm 0.39.1 (optional but recommended)
+node.js v16.4.2
+npm 8.6.0
+```
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+If you want to contribute any new features or make the extension better, you can send pull requests on this repository.
 
-For example:
+### Setup
+To start developing make sure you installed the recommended versions of npm and node.js. You can use nvm to manage your node.js versions.
 
-This extension contributes the following settings:
+Begin with:
+```
+> git clone https://github.com/nvinayvarma189/log-booster
+> cd log-booster
+> npm install
+```
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+To invoke the extension
 
-## Known Issues
+1. Click `f5` to open the debugging host vscode window
+2. Invoke the command pallete (`ctrl+shift+p`) on the debugging window and select `Log Booster`
+3. Alternatively to step 2, you can also click click `ctrl+alt+l` if you are on Windows/linux or `cmd+alt+l` if you are on MacOS.
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
 
-## Release Notes
+### Development
 
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+1. Create a new issue [here](https://github.com/nvinayvarma189/log-booster/issues)
+2. Create a new branch for the new feature/bug fix that want to add.
+3. Edit the `exntension.ts` file and add the new feature/bug fix.
+4. Create a PR for it [here](https://github.com/nvinayvarma189/log-booster/pulls) and mention the issue it is solving.
