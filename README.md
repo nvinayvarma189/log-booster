@@ -1,6 +1,6 @@
 # log-booster README
 
-![image](https://github.com/nvinayvarma189/log-booster/tree/main/images/demo.gif)
+![image](https://github.com/nvinayvarma189/log-booster/blob/main/images/demo.gif)
 log-booster is a simple VS code extension that helps you quickly add log statements to your code.
 
 Made by someone who uses `print()` as a debugger. Made for those who use `print()` as a debugger.
