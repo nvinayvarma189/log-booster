@@ -3,11 +3,34 @@
 	"displayName": "log-booster",
 	"description": "An VS code extension to add frequently used log statements",
 	"version": "0.0.1",
+	"publisher": "nvinayvarma189",
+	"author": {
+		"name": "Vinay Varma",
+		"email": "vinay.n.varma189@gmail.com"
+	},
 	"engines": {
 		"vscode": "^1.66.0"
 	},
+	"bugs": {
+		"url": "https://github.com/nvinayvarma189/log-booster/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/nvinayvarma189/log-booster.git"
+	},
 	"categories": [
-		"Other"
+		"Other",
+		"Debuggers",
+		"Snippets"
+	],
+	"galleryBanner": {
+		"color": "#136207",
+		"theme": "dark"
+	},
+	"keywords": [
+		"log-booster",
+		"logger",
+		"print"
 	],
 	"activationEvents": [
 		"onCommand:log-booster.insertStatements"
