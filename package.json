@@ -2,7 +2,7 @@
 	"name": "log-booster",
 	"displayName": "log-booster",
 	"description": "An VS code extension to add frequently used log statements",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"publisher": "nvinayvarma189",
 	"author": {
 		"name": "Vinay Varma",
