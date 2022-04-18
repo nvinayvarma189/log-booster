@@ -9,6 +9,7 @@ Made by someone who uses `print()` as a debugger. Made for those who use `print(
 
 ## Installation
 
+Please follow the instructions [here](https://marketplace.visualstudio.com/items?itemName=nvinayvarma189.log-booster) for installing this extension.
 
 ## How to use
 
