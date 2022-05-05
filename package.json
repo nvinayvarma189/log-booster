@@ -2,7 +2,7 @@
 	"name": "log-booster",
 	"displayName": "log-booster",
 	"description": "An VS code extension to add frequently used log statements",
-	"version": "0.0.1",
+	"version": "0.0.3",
 	"publisher": "nvinayvarma189",
 	"author": {
 		"name": "Vinay Varma",
@@ -33,7 +33,10 @@
 		"print"
 	],
 	"activationEvents": [
-		"onCommand:log-booster.insertStatements"
+		"onCommand:log-booster.insertStatements",
+		"onCommand:log-booster.commentLogStatements",
+		"onCommand:log-booster.deleteLogStatements"
+
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
@@ -41,6 +44,10 @@
 			{
 				"command": "log-booster.insertStatements",
 				"title": "Log Booster"
+			},
+			{
+				"command": "log-booster.commentLogStatements",
+				"title": "Log Booster: Comment Log Statements"
 			}
 		],
 		"keybindings": [
@@ -48,6 +55,30 @@
 				"command": "log-booster.insertStatements",
 				"key": "ctrl+alt+l",
 				"mac": "cmd+alt+l",
+				"when": "editorTextFocus",
+				"args": {
+					"insertBefore": false
+				}
+			},
+			{
+				"command": "log-booster.insertStatements",
+				"key": "ctrl+alt+b",
+				"mac": "cmd+alt+b",
+				"when": "editorTextFocus",
+				"args": {
+					"insertBefore": true
+				}
+			},
+			{
+				"command": "log-booster.commentLogStatements",
+				"key": "ctrl+alt+c",
+				"mac": "cmd+alt+c",
+				"when": "editorTextFocus"
+			},
+			{
+				"command": "log-booster.deleteLogStatements",
+				"key": "ctrl+alt+k",
+				"mac": "cmd+alt+k",
 				"when": "editorTextFocus"
 			}
 		]
