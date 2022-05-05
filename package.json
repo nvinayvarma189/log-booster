@@ -48,7 +48,19 @@
 				"command": "log-booster.insertStatements",
 				"key": "ctrl+alt+l",
 				"mac": "cmd+alt+l",
-				"when": "editorTextFocus"
+				"when": "editorTextFocus",
+				"args": {
+					"insertBefore": false
+				}
+			},
+			{
+				"command": "log-booster.insertStatements",
+				"key": "ctrl+alt+b",
+				"mac": "cmd+alt+b",
+				"when": "editorTextFocus",
+				"args": {
+					"insertBefore": true
+				}
 			}
 		]
 	},
