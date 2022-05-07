@@ -75,6 +75,38 @@ export function activate(context: vscode.ExtensionContext) {
 
 	});
 
+	let disposableUnCommentLogStatements = vscode.commands.registerCommand('log-booster.unCommentLogStatements', () => {
+		const editor = vscode.window.activeTextEditor;
+		if (!editor) {
+			vscode.window.showInformationMessage('No active editor. Please open a Python file.');
+			return; // No open text editor
+		}
+		const fileName = editor.document.fileName;
+
+		// check if file is a python file
+		if (!fileName.endsWith(".py")) {
+			vscode.window.showInformationMessage('No active Python file detected.');
+			return;
+		}
+
+		const document: vscode.TextDocument = editor.document;
+		var lines: vscode.TextLine[] = getLogStatementLines(document);
+
+		// filter the lines thatr start with #
+		lines = lines.filter((line: vscode.TextLine) => {
+			// if the first non whitespace character is #, return true
+			return line.text[line.firstNonWhitespaceCharacterIndex] === '#';
+		});
+
+		editor.edit((editBuilder) => {
+			lines.forEach((line: vscode.TextLine) => {
+				let lineWithoutComment = line.text.replace(/#\s*/, "");
+				editBuilder.replace(line.range, lineWithoutComment);
+			});
+		});
+
+	});
+
 	let disposableDeleteLogStatements = vscode.commands.registerCommand('log-booster.deleteLogStatements', () => {
 		const editor = vscode.window.activeTextEditor;
 		if (!editor) {
@@ -103,6 +135,7 @@ export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(
 		disposableInsertStatements,
 		disposableCommentLogStatements,
+		disposableUnCommentLogStatements,
 		disposableDeleteLogStatements
 	);
 }

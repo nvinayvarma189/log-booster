@@ -35,6 +35,7 @@
 	"activationEvents": [
 		"onCommand:log-booster.insertStatements",
 		"onCommand:log-booster.commentLogStatements",
+		"onCommand:log-booster.unCommentLogStatements",
 		"onCommand:log-booster.deleteLogStatements"
 
 	],
@@ -48,6 +49,14 @@
 			{
 				"command": "log-booster.commentLogStatements",
 				"title": "Log Booster: Comment Log Statements"
+			},
+			{
+				"command": "log-booster.unCommentLogStatements",
+				"title": "Log Booster: Uncomment Log Statements"
+			},
+			{
+				"command": "log-booster.deleteLogStatements",
+				"title": "Log Booster: Delete all Log Statements"
 			}
 		],
 		"keybindings": [
@@ -73,6 +82,12 @@
 				"command": "log-booster.commentLogStatements",
 				"key": "ctrl+alt+c",
 				"mac": "cmd+alt+c",
+				"when": "editorTextFocus"
+			},
+			{
+				"command": "log-booster.unCommentLogStatements",
+				"key": "ctrl+alt+u",
+				"mac": "cmd+alt+u",
 				"when": "editorTextFocus"
 			},
 			{
