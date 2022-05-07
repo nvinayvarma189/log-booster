@@ -2,7 +2,7 @@
 	"name": "log-booster",
 	"displayName": "log-booster",
 	"description": "An VS code extension to add frequently used log statements",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"publisher": "nvinayvarma189",
 	"author": {
 		"name": "Vinay Varma",
@@ -37,7 +37,6 @@
 		"onCommand:log-booster.commentLogStatements",
 		"onCommand:log-booster.unCommentLogStatements",
 		"onCommand:log-booster.deleteLogStatements"
-
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
