@@ -23,11 +23,21 @@ Select the variable/expression you want to log and click `ctrl+alt+l` if you are
 2. Log statements follow the same indentation as the line of the selected text
 3. A shortcut key is provided to invoke the extension
 
+### Feature demos:
+1. Insert log statements before the current line
+![image](https://github.com/nvinayvarma189/log-booster/blob/main/images/log_before.gif "")
+2. Comment all the log statement
+![image](https://github.com/nvinayvarma189/log-booster/blob/main/images/comment_logs.gif "")
+3. Uncomment all the log statement
+![image](https://github.com/nvinayvarma189/log-booster/blob/main/images/uncomment_logs.gif "")
+4. Delete all the log statement
+![image](https://github.com/nvinayvarma189/log-booster/blob/main/images/delete_logs.gif "")
 
 ## Limitations
 
 1. Only works for Python files
 2. Logging multi-cursor selections won't work. Only the first selection will be logged.
+3. Cannot invoke the insert before command through the command pallete. It is only accesible via the shortcut key (`ctrl+alt+b` or `cmd+alt+b`). For more details, please see [this](https://stackoverflow.com/questions/43909741/can-i-pass-arguments-to-command-in-contributes-block)
 
 ## Contributions
 
