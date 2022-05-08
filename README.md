@@ -25,13 +25,13 @@ Select the variable/expression you want to log and click `ctrl+alt+l` if you are
 
 ### Feature demos:
 1. Insert log statements before the current line
-![image](https://github.com/nvinayvarma189/log-booster/blob/main/images/log_before.gif "")
+![image](https://i.ibb.co/VYhjTys/log-before.gif "")
 2. Comment all the log statement
-![image](https://github.com/nvinayvarma189/log-booster/blob/main/images/comment_logs.gif "")
+![image](https://i.ibb.co/tQmBRWy/comment-logs.gif "")
 3. Uncomment all the log statement
-![image](https://github.com/nvinayvarma189/log-booster/blob/main/images/uncomment_logs.gif "")
+![image](https://i.ibb.co/Mg02Gj3/uncomment-logs.gif "")
 4. Delete all the log statement
-![image](https://github.com/nvinayvarma189/log-booster/blob/main/images/delete_logs.gif "")
+![image](https://i.ibb.co/Jj8H0hK/delete-logs.gif "")
 
 ## Limitations
 
