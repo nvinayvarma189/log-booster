@@ -37,7 +37,7 @@ Select the variable/expression you want to log and click `ctrl+alt+l` if you are
 
 1. Only works for Python files
 2. Logging multi-cursor selections won't work. Only the first selection will be logged.
-3. Cannot invoke the insert before command through the command pallete. It is only accesible via the shortcut key (`ctrl+alt+b` or `cmd+alt+b`). For more details, please see [this](https://stackoverflow.com/questions/43909741/can-i-pass-arguments-to-command-in-contributes-block)
+3. Cannot invoke the insert before command through the command pallete. It is only accessible via the shortcut key (`ctrl+alt+l` or `cmd+alt+b`). For more details, please see [this](https://stackoverflow.com/questions/43909741/can-i-pass-arguments-to-command-in-contributes-block)
 
 ## Contributions
 
